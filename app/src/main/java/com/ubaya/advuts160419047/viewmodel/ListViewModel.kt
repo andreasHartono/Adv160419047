@@ -13,7 +13,7 @@ import com.google.gson.reflect.TypeToken
 import com.ubaya.advuts160419047.model.Kost
 
 class ListViewModel(application: Application) : AndroidViewModel(application) {
-    val kostLiveData = MutableLiveData<List<Kost>>()
+    val kostLiveData = MutableLiveData<ArrayList<Kost>>()
     val kostLErrorLiveData = MutableLiveData<Boolean>()
     val loadingLiveData =MutableLiveData<Boolean>()
     val TAG = "volleyTag"

@@ -45,11 +45,11 @@ class DetailKostFragment : Fragment() {
             val kost = it
             Log.d("cobares",kost.toString())
             kost?.let {
-                textDetailNama.text = it.name
-                textDetailAlamat.text = it.alamat
-                textFasilitas.text = it.fasilitas
-                textDetailHarga.text = it.harga.toString()
-                imageDetailKost.loadImage(it.photoUrl, progressLoadDetailKost)
+                textDetailNama.text = it[0].name
+                textDetailAlamat.text = "Alamat: " +it[0].alamat
+                textFasilitas.text = "Fasilitas: " + it[0].fasilitas
+                textDetailHarga.text = "Harga: Rp." + it[0].harga.toString()
+                imageDetailKost.loadImage(it[0].photoUrl, progressLoadDetailKost)
             }
         }
     }

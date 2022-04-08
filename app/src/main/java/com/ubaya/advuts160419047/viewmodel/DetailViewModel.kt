@@ -13,7 +13,7 @@ import com.google.gson.reflect.TypeToken
 import com.ubaya.advuts160419047.model.Kost
 
 class DetailViewModel(application: Application) : AndroidViewModel(application) {
-    val kostLiveData = MutableLiveData<Kost>()
+    val kostLiveData = MutableLiveData<ArrayList<Kost>>()
     //val kostLiveData2 = MutableLiveData<Kost>()
     val TAG = "detailtag"
     private var queue: RequestQueue? = null
@@ -28,8 +28,8 @@ class DetailViewModel(application: Application) : AndroidViewModel(application) 
         val stringRequest = StringRequest(
             Request.Method.GET, url,
             {
-                val sType = object : TypeToken<Kost>() {}.type
-                val result = Gson().fromJson<Kost>(it,sType)
+                val sType = object : TypeToken<ArrayList<Kost>>() {}.type
+                val result = Gson().fromJson<ArrayList<Kost>>(it,sType)
                 kostLiveData.value = result
                 Log.d("showvoley",it)
             },

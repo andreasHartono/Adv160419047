@@ -45,6 +45,9 @@
             app:destination="@id/splashFragment"
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_itemMain_to_itemKamar"
+            app:destination="@id/itemKamar" />
     </fragment>
     <fragment
         android:id="@+id/itemProfile"
@@ -67,5 +70,14 @@
         android:id="@+id/itemKamar"
         android:name="com.ubaya.advuts160419047.view.ListKamarFragment"
         android:label="fragment_list_kamar"
-        tools:layout="@layout/fragment_list_kamar" />
+        tools:layout="@layout/fragment_list_kamar" >
+        <action
+            android:id="@+id/action_itemKamar_to_detailKamarFragment"
+            app:destination="@id/detailKamarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailKamarFragment"
+        android:name="com.ubaya.advuts160419047.view.DetailKamarFragment"
+        android:label="fragment_detail_kamar"
+        tools:layout="@layout/fragment_detail_kamar" />
 </navigation>
