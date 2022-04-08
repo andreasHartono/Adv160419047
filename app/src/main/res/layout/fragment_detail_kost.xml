@@ -58,4 +58,15 @@
         android:text="Detail Harga"
         app:layout_constraintStart_toStartOf="@+id/textFasilitas"
         app:layout_constraintTop_toBottomOf="@+id/textFasilitas" />
+
+    <ProgressBar
+        android:id="@+id/progressLoadDetailKost"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imageDetailKost"
+        app:layout_constraintEnd_toEndOf="@+id/imageDetailKost"
+        app:layout_constraintStart_toStartOf="@+id/imageDetailKost"
+        app:layout_constraintTop_toTopOf="@+id/imageDetailKost"
+        app:layout_constraintVertical_bias="0.525" />
 </androidx.constraintlayout.widget.ConstraintLayout>

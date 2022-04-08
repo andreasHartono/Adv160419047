@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.ubaya.advuts160419047.model.Kost
@@ -26,7 +27,7 @@ class ListViewModel(application: Application) : AndroidViewModel(application) {
 //        )
         kostLErrorLiveData.value = false
         loadingLiveData.value = true
-
+        queue = Volley.newRequestQueue(getApplication())
         val url = "http://192.168.1.3/music/kost.php"
         val stringRequest = StringRequest(
             Request.Method.GET, url,

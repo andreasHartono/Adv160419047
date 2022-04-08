@@ -33,9 +33,10 @@ class MainFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
         viewModel.refresh()
 
-
         recView.layoutManager = LinearLayoutManager(context)
         recView.adapter = kostListAdapter
+
+        observeViewModel()
 
         refreshLayout.setOnRefreshListener {
             recView.visibility = View.GONE
@@ -45,7 +46,6 @@ class MainFragment : Fragment() {
             refreshLayout.isRefreshing = false
         }
 
-        observeViewModel()
     }
 
     private fun observeViewModel() {

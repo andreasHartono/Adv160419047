@@ -24,7 +24,7 @@ class DetailViewModel(application: Application) : AndroidViewModel(application) 
 //                1500000, "https://static.mamikos.com/uploads/cache/data/style/2016-07-12/OG98YkEM-540x720.jpg")
 
         queue = Volley.newRequestQueue(getApplication())
-        val url = "http://http://192.168.1.3/music/kost.php?id=$kostID"
+        val url = "http://192.168.1.3/music/kost.php?id=$kostID"
         val stringRequest = StringRequest(
             Request.Method.GET, url,
             {

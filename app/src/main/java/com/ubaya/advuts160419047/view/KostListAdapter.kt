@@ -26,11 +26,13 @@ class KostListAdapter(val kostList:ArrayList<Kost>) : RecyclerView
             textNama.text = kost.name
             textAlamat.text = kost.alamat
             btnDetail.setOnClickListener {
-                //val action = DetailKostFragmentDirections.detailkostmainkost()
                 val action = kost.id?.let {
-                    //
+                    id -> MainFragmentDirections.mainkostdetailkost(id.toInt())
                 }
-                //Navigation.findNavController(it).navigate(action)
+                //val action = DetailKostFragmentDirections.detailkostmainkost()
+                if(action != null) {
+                    Navigation.findNavController(it).navigate(action)
+                }
             }
             imageKost.loadImage(kost.photoUrl, progressLoadKostFoto)
         }

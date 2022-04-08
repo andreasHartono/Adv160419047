@@ -1,6 +1,7 @@
 package com.ubaya.advuts160419047.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -34,18 +35,23 @@ class DetailKostFragment : Fragment() {
             viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
             viewModel.fetch(getId)
 
-            viewModel.kostLiveData.observe(viewLifecycleOwner) {
-                val kost = viewModel.kostLiveData.value
-                kost?.let {
-                    textDetailNama.text = it.name
-                    textDetailAlamat.text = it.alamat
-                    textFasilitas.text = it.fasilitas
-                    textDetailHarga.text = it.harga.toString()
-                    imageDetailKost.loadImage(it.photoUrl, progressLoadKostFoto)
-                }
-            }
+            observeViewModel()
         }
 
+    }
+
+    private fun observeViewModel() {
+        viewModel.kostLiveData.observe(viewLifecycleOwner) {
+            val kost = it
+            Log.d("cobares",kost.toString())
+            kost?.let {
+                textDetailNama.text = it.name
+                textDetailAlamat.text = it.alamat
+                textFasilitas.text = it.fasilitas
+                textDetailHarga.text = it.harga.toString()
+                imageDetailKost.loadImage(it.photoUrl, progressLoadDetailKost)
+            }
+        }
     }
 
 
