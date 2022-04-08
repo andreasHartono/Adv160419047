@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/itemMain">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.ubaya.advuts160419047.view.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/splash_onboarding"
+            app:destination="@id/onboardingFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/splash_main"
+            app:destination="@id/itemMain"
+            app:popUpTo="@id/itemMain"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.ubaya.advuts160419047.view.OnboardingFragment"
+        android:label="fragment_onboarding"
+        tools:layout="@layout/fragment_onboarding" >
+        <action
+            android:id="@+id/onboarding_main"
+            app:destination="@id/itemMain"
+            app:popUpTo="@id/onboardingFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemMain"
+        android:name="com.ubaya.advuts160419047.view.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/mainkostdetailkost"
+            app:destination="@id/itemDetailKost" />
+        <action
+            android:id="@+id/main_splash"
+            app:destination="@id/splashFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemProfile"
+        android:name="com.ubaya.advuts160419047.view.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/itemDetailKost"
+        android:name="com.ubaya.advuts160419047.view.DetailKostFragment"
+        android:label="fragment_detail_kost"
+        tools:layout="@layout/fragment_detail_kost" >
+        <action
+            android:id="@+id/detailkostmainkost"
+            app:destination="@id/itemMain" />
+        <argument
+            android:name="kostID"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemKamar"
+        android:name="com.ubaya.advuts160419047.view.ListKamarFragment"
+        android:label="fragment_list_kamar"
+        tools:layout="@layout/fragment_list_kamar" />
+</navigation>

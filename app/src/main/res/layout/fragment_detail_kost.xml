@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout7"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.DetailKostFragment" >
+
+    <ImageView
+        android:id="@+id/imageDetailKost"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textDetailNama"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Detail Kost"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageDetailKost"
+        app:layout_constraintStart_toStartOf="@+id/imageDetailKost"
+        app:layout_constraintTop_toBottomOf="@+id/imageDetailKost" />
+
+    <TextView
+        android:id="@+id/textDetailAlamat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Detail Alamat"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textDetailNama"
+        app:layout_constraintTop_toBottomOf="@+id/textDetailNama" />
+
+    <TextView
+        android:id="@+id/textFasilitas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Detail Fasilitas"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textDetailAlamat"
+        app:layout_constraintTop_toBottomOf="@+id/textDetailAlamat" />
+
+    <TextView
+        android:id="@+id/textDetailHarga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Detail Harga"
+        app:layout_constraintStart_toStartOf="@+id/textFasilitas"
+        app:layout_constraintTop_toBottomOf="@+id/textFasilitas" />
+</androidx.constraintlayout.widget.ConstraintLayout>
